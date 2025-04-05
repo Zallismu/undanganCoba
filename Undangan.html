@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan </title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --background: #1a1a1a;
+      --foreground: #ffffff;
+      --accent: gold;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--background);
+      background-image: url ('zal.jpg') no-repeat center center;
+      background-repeat: repeat;
+      color: var(--foreground);
+      text-align: center;
+      overflow-x: hidden;
+    }
+    .overlay {
+      background-color: rgba(0,0,0,0.6);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .container {
+      position: relative;
+      z-index: 2;
+      padding: 100px 20px;
+      animation: fadeSlideIn 2s ease-out forwards;
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      margin-bottom: 10px;
+      animation: zoomIn 2s ease-in-out;
+    }
+    h2, p {
+      animation: fadeIn 3s ease-in-out;
+    }
+    .btn {
+      background: var(--accent);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      color: black;
+      font-weight: bold;
+      margin-top: 20px;
+      text-decoration: none;
+      animation: bounceIn 2s ease-in-out;
+      display: inline-block;
+    }
+    .section {
+      background-color: rgba(255, 255, 255, 0.05);
+      margin: 40px 20px;
+      padding: 20px;
+      border-radius: 15px;
+      animation: slideUp 1.5s ease-in-out;
+    }
+    iframe {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 400px;
+      margin: auto;
+      animation: fadeInUp 2s ease-in-out;
+    }
+    input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      background-color: var(--accent);
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .qr {
+      margin: 20px 0;
+    }
+    .gallery img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 10px 0;
+      animation: fadeZoomIn 1.5s ease-in-out;
+    }
+    .countdown {
+      font-size: 1.5em;
+      margin-top: 20px;
+      font-weight: bold;
+      animation: fadeInUp 2s ease-in-out;
+    }
+    .leaf {
+      position: fixed;
+      top: -50px;
+      width: 30px;
+      height: 30px;
+      background: url('th.png') no-repeat center center;
+      background-size: contain;
+      animation: fall linear infinite;
+      z-index: 0;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
+    .ucapan-list {
+      text-align: left;
+      margin-top: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .ucapan-item {
+      background-color: rgba(255,255,255,0.1);
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeSlideIn { 0% { opacity: 0; transform: translateY(40px); } 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { 0% { transform: translateY(50px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+    @keyframes slideUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @keyframes zoomIn { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    @keyframes fadeZoomIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    @keyframes bounceIn { 0% { transform: scale(0.5); opacity: 0; } 60% { transform: scale(1.05); opacity: 1; } 100% { transform: scale(1); } }
+    audio { display: none; }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="container">
+    <h1>R</h1>
+    <h2>Sabtu, 22 november 2025</h2>
+    <p>Dengan hormat, kami mengundang Anda untuk hadir dalam pernikahan kami.</p>
+    <div class="countdown" id="countdown"></div>
+    <a class="btn" href="#rsvp">Konfirmasi Kehadiran</a>
+  </div>
+
+  <div class="section gallery">
+    <h2>Foto Kenangan</h2>
+    <img src="zal.jpg" alt="foto1">
+    <img src="logo-None-universitas-indraprasta-pgri.jpg" alt="foto2">
+  </div>
+
+  <div class="section">
+    <h2>Video Pre-Wedding</h2>
+    <iframe width="560" height="315" src="2025-01-21 21-27-22" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div class="section">
+    <h2>Lokasi Acara</h2>
+    <p>Gedung Serbaguna Bahagia, Bandung</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63388.61807501956!2d107.5780756!3d-6.9034498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e64fdc1866df%3A0xf25c6f2b6fc63cf!2sGedung%20Serbaguna!5e0!3m2!1sid!2sid!4v1616172303700!5m2!1sid!2sid" width="100%" height="300" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+
+  <div class="section qr">
+    <h2>Scan QR untuk RSVP</h2>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://yourdomain.com/undangan-haly-meli&size=200x200" alt="QR Code">
+  </div>
+
+  <div class="section" id="rsvp">
+    <h2>RSVP Kehadiran</h2>
+    <form onsubmit="kirimUcapan(event)">
+      <input type="text" id="nama" placeholder="Nama Anda" required>
+      <input type="number" id="jumlah" placeholder="Jumlah Tamu" required>
+      <textarea id="ucapan" placeholder="Ucapan atau doa"></textarea>
+      <button type="submit">Kirim</button>
+    </form>
+    <div class="ucapan-list" id="ucapanList"></div>
+  </div>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung audio.
+  </audio>
+
+  <script>
+    const countdown = document.getElementById("countdown");
+    const eventDate = new Date("November 22, 2025 09:00:00").getTime();
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+      if (distance < 0) {
+        countdown.innerHTML = "Acara sedang berlangsung!";
+        return;
+      }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      countdown.innerHTML = `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
+    }, 1000);
+
+    function createLeaf() {
+      const leaf = document.createElement("div");
+      leaf.classList.add("leaf");
+      leaf.style.left = Math.random() * window.innerWidth + "px";
+      leaf.style.animationDuration = (5 + Math.random() * 5) + "s";
+      document.body.appendChild(leaf);
+      setTimeout(() => leaf.remove(), 10000);
+    }
+    setInterval(createLeaf, 400);
+
+    function kirimUcapan(e) {
+      e.preventDefault();
+      const nama = document.getElementById("nama").value;
+      const ucapan = document.getElementById("ucapan").value;
+      const container = document.getElementById("ucapanList");
+      const item = document.createElement("div");
+      item.classList.add("ucapan-item");
+      item.innerHTML = `<strong>${nama}:</strong><br>${ucapan}`;
+      container.prepend(item);
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
